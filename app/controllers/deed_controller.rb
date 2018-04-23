@@ -15,8 +15,16 @@ class DeedController < ApplicationController
     elsif @collection_ids
       @deeds = Deed.where(collection_id: @collection_ids).order('created_at DESC').paginate :page => params[:page], :per_page => PAGES_PER_SCREEN
       return
+    else
+      # display only deeds on collections the current user can see
+      if current_user
+        condition = ['collections.restricted = false OR collection_id in (?)', current_user.collection_collaborations.pluck(:id) + current_user.collections.map { |c| c.id }]
+      else
+        condition = ['collections.restricted = false']
+      end
     end
-    @deeds = Deed.where(condition).order('created_at DESC').paginate :page => params[:page], :per_page => PAGES_PER_SCREEN
+    
+    @deeds = Deed.joins(:collection).where(condition).order('created_at DESC').paginate :page => params[:page], :per_page => PAGES_PER_SCREEN
   end
 
 end
