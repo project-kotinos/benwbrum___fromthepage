@@ -257,7 +257,7 @@ end
 
 
   def track_action
-    ahoy.track_visit
+    ahoy.track_visit unless ahoy.visit
     extras = {}
     extras[:collection_id] = @collection.id if @collection
     extras[:collection_title] = @collection.title if @collection
