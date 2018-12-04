@@ -45,7 +45,6 @@ html lang="en-US"
             -else
               =svg_symbol '#logo', title: 'Home'
         .toolbar_group
-
           -if user_signed_in?
             - if !(Collection.all.count > 30)
               = link_to 'Projects', dashboard_path, class: 'header_link'
