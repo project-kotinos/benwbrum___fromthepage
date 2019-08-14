@@ -14,7 +14,7 @@ export MERB_ENV=test
 export JRUBY_OPTS="--server -Dcext.enabled=false -Xcompile.invokedynamic=false"
 
 
-apt-get update && apt-get install -y tzdata imagemagick libmagickcore-dev libmagickwand-dev ghostscript graphviz libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+apt-get update && apt-get install -y xvfb tzdata imagemagick libmagickcore-dev libmagickwand-dev ghostscript graphviz libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
 gem install bundler -v 2.0.1
 
 # before_install
