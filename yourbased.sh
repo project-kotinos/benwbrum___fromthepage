@@ -12,6 +12,7 @@ export RAILS_ENV=test
 export RACK_ENV=test
 export MERB_ENV=test
 export JRUBY_OPTS="--server -Dcext.enabled=false -Xcompile.invokedynamic=false"
+export DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true
 
 
 apt-get update && apt-get install -y xvfb tzdata imagemagick libmagickcore-dev libmagickwand-dev ghostscript graphviz libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
