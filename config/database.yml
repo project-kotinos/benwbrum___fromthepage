@@ -11,6 +11,7 @@
 #
 default: &default
   url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   adapter: mysql2
   encoding: utf8
   pool: 5
