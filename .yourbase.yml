@@ -8,7 +8,8 @@ build_targets:
   environment:
   - DB=mysql
   - MYSQL_HOST={{ .Containers.IP "mysql" }}
-  - MYSQL_URL=mysql2://root:root@{{ .Containers.IP "mysql" }}:3306/db
+#   - MYSQL_URL=mysql2://root:root@{{ .Containers.IP "mysql" }}:3306/db
+  - DATABASE_URL=mysql2://root:root@{{ .Containers.IP "db" }}:3306/db
   dependencies:
         containers:
           mysql:
