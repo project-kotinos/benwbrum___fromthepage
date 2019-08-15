@@ -30,3 +30,4 @@ ci:
 dependencies:
   build:
   - ruby:2.3.7
+  - node:10.15.1
